@@ -57,8 +57,8 @@
             {
 
                 String c = s[j] + "";
-                if (functionCheek(c))
-                    t = 1;
+                if (functionCheek(c)) {
+                    t = 1; }
                 if (numberCheek(c))
                 {
                     s1[i] = c;
@@ -84,7 +84,7 @@
                             {
                                 break;
                             }
-                     }}
+                     }
                         st.Push(c);
                     }
                     else
@@ -177,19 +177,18 @@
                             case ("c"): { result = Math.Cos(op); break; }
                             case ("s"): { result = Math.Sin(op); break; }
                         }
-                        //if (result == 0) result = 0.001;
                         st.Push(result);
                     }
                     else
-                         if (s[j] == "y")
+                         if (s[j] == "y") {
                             st.Push(y);
-                    
+			 }
                     else
                     {
-                        if (s[j] == "x")
-                            st.Push(x);
-                        else
-                            st.Push(Double.Parse(s[j]));
+                        if (s[j] == "x") {
+                            st.Push(x); }
+                        else {
+                            st.Push(Double.Parse(s[j])); }
                     }
             }
 
