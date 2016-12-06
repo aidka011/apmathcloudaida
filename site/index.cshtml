@@ -196,8 +196,9 @@
     }
 
 
-  
-        public double[] ravn_rasp(double[] p)
+	 public class Program
+ 	{
+	       static double[] ravn_rasp(double[] p)  
         {
  
 
@@ -208,7 +209,8 @@
 
             return p;
         }
-
+        static double Main()
+        {
            Parser p = new Parser("((x-0,5)^2 - 1)^4-(y-0,1)*((y-0,1)^3)");
             double answer = p.calc(-0.3361, -0.2010);
 
@@ -247,11 +249,14 @@
                     j = j + 1;
                 }
             }
-    
-
+		return answer;
+	 }
+	 }
+	double answ=1;
+	answ=Main();
 }
 <html>
 	<body>
-		<p>The dateTime is @answer</p>
+		<p>The dateTime is @answ</p>
 	</body>
 </html>
