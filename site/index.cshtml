@@ -210,6 +210,8 @@
         static void Main(string[] args)
         {
            Parser p = new Parser(Request.QueryString["txtstring"]);
+            double answer = p.calc(-0.3361, -0.2010);
+
             double rad = 2;
             double[] Y = new double[2];
             double[] X = new double[2];
@@ -245,9 +247,10 @@
             }
            //Console.WriteLine("x={0}, y={1}, f={2}", Xok[0], Xok[1], cal);
 
+
         }
     }
-}	 
+}
 
 <html>
 	<body>
