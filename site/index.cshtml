@@ -210,7 +210,7 @@
             return p;
         }
 
-        static void Main(string[] args)
+        static double Main(string[] args)
         {
            Parser p = new Parser("((x-0,5)^2 - 1)^4-(y-0,1)*((y-0,1)^3)");
             double answer = p.calc(-0.3361, -0.2010);
@@ -250,6 +250,7 @@
                     j = j + 1;
                 }
             }
+		return answer;
         }
     }
 
