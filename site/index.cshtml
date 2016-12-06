@@ -56,12 +56,12 @@
             {
 
                 String c = s[j] + "";
-                @if (functionCheek(c)) {
+                if (functionCheek(c)) {
                     t = 1; }
-                @if (numberCheek(c))
+                if (numberCheek(c))
                 {
                     s1[i] = c;
-                    @while (s.Length > j + 1 && numberCheek(s[j + 1] + ""))
+                    while (s.Length > j + 1 && numberCheek(s[j + 1] + ""))
                     {
                         j++;
                         s1[i] += s[j];
@@ -69,11 +69,11 @@
                     i++;
                 }
                 else
-                    @if (operatorCheek(c))
+                    if (operatorCheek(c))
                     {
-                        @while (!(st.Count() == 0))
+                        while (!(st.Count() == 0))
                         {
-                            @if (priority(st.Peek()) >= priority(c))
+                            if (priority(st.Peek()) >= priority(c))
                             {
                                 s1[i] = st.Peek();
                                 st.Pop();
@@ -87,14 +87,14 @@
                         st.Push(c);
                     }
                     else
-                        @if ((c == "(" || functionCheek(c)) && t==1)
+                        if ((c == "(" || functionCheek(c)) && t==1)
                         {
                             st.Push(c);
                         }
                         else 
-                            @if (c == ")" && t==1)
+                            if (c == ")" && t==1)
                             {
-                                @while (st.Peek() != "(")
+                                while (st.Peek() != "(")
                                 {
                                     s1[i] = st.Peek();
                                     st.Pop();
@@ -102,7 +102,7 @@
                                 }
                                 st.Pop();
 
-                                @if (functionCheek(st.Peek()))
+                                if (functionCheek(st.Peek()))
                                 {
                                     s1[i] = st.Peek();
                                     st.Pop();
@@ -111,14 +111,14 @@
                                 t = 0;
                             }
                             else
-                                @if (c == "(" )
+                                if (c == "(" )
                                 {
                                     st.Push(c);
                                 }
                                 else
-                                    @if (c == ")")
+                                    if (c == ")")
                                     {
-                                        @while (st.Peek() != "(")
+                                        while (st.Peek() != "(")
                                         {
                                             s1[i] = st.Peek();
                                             st.Pop();
@@ -127,7 +127,7 @@
                                         st.Pop();
                                     } 
             }
-            @while (!(st.Count() == 0))
+            while (!(st.Count() == 0))
             {
                 s1[i] = st.Peek();
                 st.Pop();
@@ -150,7 +150,7 @@
 
             for (int j = 0; j < s.Length && s[j] != null; j++)
             {
-                @if (s[j] == "+" || s[j] == "-" || s[j] == "*" || s[j] == "/" || s[j] == "^")
+                if (s[j] == "+" || s[j] == "-" || s[j] == "*" || s[j] == "/" || s[j] == "^")
                 {
                     double result = 0, op2 = st.Pop(), op1 = st.Pop();
 
@@ -166,7 +166,7 @@
                     st.Push(result);
                 }
                 else
-                    @if (s[j] == "l" || s[j] == "c" || s[j] == "s")
+                    if (s[j] == "l" || s[j] == "c" || s[j] == "s")
                     {
                         double result = 0, op = st.Pop();
 
@@ -179,12 +179,12 @@
                         st.Push(result);
                     }
                     else
-                         @if (s[j] == "y") {
+                         if (s[j] == "y") {
                             st.Push(y);
              }
                     else
                     {
-                        @if (s[j] == "x") {
+                        if (s[j] == "x") {
                             st.Push(x); }
                         else {
                             st.Push(Double.Parse(s[j])); }
@@ -226,23 +226,23 @@
             Random rx = new Random();
             double[] ar = new double[2];
             double a, b;
-            @while (j <= m)
+            while (j <= m)
             {   rad=Math.Sqrt(X[0] * X[0] + X[1] * X[1]);
                 a = -rad; b = rad;
                 ar[0] = rx.NextDouble() * (b - a) + a;
                 ar[1] = rx.NextDouble() * (b - a) + a;
                 Y = ravn_rasp(ar);
                 cal = p.calc(Y[0], Y[1]);
-                @if (cal < 0)
+                if (cal < 0)
                 {
                     X[0] = Y[0];
                     X[1] = Y[1];
                 }
-                else @if (j < m)
+                else if (j < m)
         {
                     j = j + 1;
         }
-                else @if (j == m)
+                else if (j == m)
                 {
                     Xok[0] = X[0];
                     Xok[1] = X[1];
