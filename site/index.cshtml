@@ -64,8 +64,7 @@
                     }
                     i++;
                 }
-                else
-                    if (operatorCheek(c))
+                else if (operatorCheek(c))
                     {
                         while (!(st.Count() == 0))
                         {
@@ -82,13 +81,11 @@
                         }
                         st.Push(c);
                     }
-                    else
-                        if ((c == "(" || functionCheek(c)) && t==1)
+                    else if ((c == "(" || functionCheek(c)) && t==1)
                         {
                             st.Push(c);
                         }
-                        else 
-                            if (c == ")" && t==1)
+                        else if (c == ")" && t==1)
                             {
                                 while (st.Peek() != "(")
                                 {
@@ -106,13 +103,11 @@
                                 }
                                 t = 0;
                             }
-                            else
-                                if (c == "(" )
+                            else if (c == "(" )
                                 {
                                     st.Push(c);
                                 }
-                                else
-                                    if (c == ")")
+                                else if (c == ")")
                                     {
                                         while (st.Peek() != "(")
                                         {
