@@ -61,7 +61,7 @@
                 @if (numberCheek(c))
                 {
                     s1[i] = c;
-                    while (s.Length > j + 1 && numberCheek(s[j + 1] + ""))
+                    @while (s.Length > j + 1 && numberCheek(s[j + 1] + ""))
                     {
                         j++;
                         s1[i] += s[j];
@@ -71,7 +71,7 @@
                 else
                     @if (operatorCheek(c))
                     {
-                        while (!(st.Count() == 0))
+                        @while (!(st.Count() == 0))
                         {
                             @if (priority(st.Peek()) >= priority(c))
                             {
@@ -94,7 +94,7 @@
                         else 
                             @if (c == ")" && t==1)
                             {
-                                while (st.Peek() != "(")
+                                @while (st.Peek() != "(")
                                 {
                                     s1[i] = st.Peek();
                                     st.Pop();
@@ -118,7 +118,7 @@
                                 else
                                     @if (c == ")")
                                     {
-                                        while (st.Peek() != "(")
+                                        @while (st.Peek() != "(")
                                         {
                                             s1[i] = st.Peek();
                                             st.Pop();
@@ -127,7 +127,7 @@
                                         st.Pop();
                                     } 
             }
-            while (!(st.Count() == 0))
+            @while (!(st.Count() == 0))
             {
                 s1[i] = st.Peek();
                 st.Pop();
@@ -226,7 +226,7 @@
             Random rx = new Random();
             double[] ar = new double[2];
             double a, b;
-            while (j <= m)
+            @while (j <= m)
             {   rad=Math.Sqrt(X[0] * X[0] + X[1] * X[1]);
                 a = -rad; b = rad;
                 ar[0] = rx.NextDouble() * (b - a) + a;
