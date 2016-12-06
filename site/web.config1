@@ -10,5 +10,8 @@
     <system.web>
         <customErrors mode="Off"/>
         <compilation debug="true" targetFramework="4.0" />
+        <pages> 
+         <add namespace="ConsoleApplication1"/>
+        </pages>
     </system.web>
 </configuration>
